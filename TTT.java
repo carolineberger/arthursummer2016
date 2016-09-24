@@ -37,7 +37,8 @@ public class TTT {
 	public static void english(int languagePreference){
 				System.out.println("English Mode");
 				System.out.println("__"+c1+"____|___"+c2+"__|____"+c3+"__");
-				System.out.println("__b1____|___b2__|____b3__");
+				System.out.println("__b1____|___b2__|____b3__"); //edit this so this is the same pattern as the line above
+				//( make "___"+b1+"____")
 				System.out.println("__a1____|___a2__|____a3__");
 				System.out.println("Player 1, where would you like to place your X?");
 				String position1 = in.next();
@@ -51,6 +52,8 @@ public class TTT {
 				System.out.println("__"+c1+"____|___"+c2+"__|____c3__");
 				System.out.println("__b1____|___b2__|____b3__");
 				System.out.println("__a1____|___a2__|____a3__");
+				//change player 1 to player 2 and X to 0 and copy these into your french and spanish blocks
+				// in the appropriate language
 				System.out.println("Player 1, where would you like to place your X?");
 				String position2 = in.next();
 				return;
@@ -63,7 +66,7 @@ public class TTT {
 		System.out.println("__c1____|___c2__|____c3__");
 		System.out.println("__b1____|___b2__|____b3__");
 		System.out.println("__a1____|___a2__|____a3__");
-		
+		//change this board so it looks like the board in the english version
 		System.out.println("Joueur 1, ou veux tu placer ton X?");
 		String position1 = in.next(); 
 
@@ -73,6 +76,7 @@ public class TTT {
 		System.out.println("__c1____|___c2__|____c3__");
 		System.out.println("__b1____|___b2__|____b3__");
 		System.out.println("__a1____|___a2__|____a3__");
+		//change this board so it looks like the board in the english version
 
 		System.out.println("Jugador 1, donde quieres poner tu X?");
 		String position1 = in.next(); 
