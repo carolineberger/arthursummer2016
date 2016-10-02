@@ -8,7 +8,6 @@ public class TTT {
 	static String b1 = "b1";
 	static String b2 = "b2";
 	static String b3 = "b3";
-	
 	static String a1 = "a1";
 	static String a2 = "a2";
 	static String a3 = "a3";
@@ -35,27 +34,167 @@ public class TTT {
 	}
 	
 	public static void english(int languagePreference){
-				System.out.println("English Mode");
-				System.out.println("__"+c1+"____|___"+c2+"__|____"+c3+"__");
-				System.out.println("__b1____|___b2__|____b3__"); //edit this so this is the same pattern as the line above
-				//( make "___"+b1+"____")
-				System.out.println("__a1____|___a2__|____a3__");
-				System.out.println("Player 1, where would you like to place your X?");
-				String position1 = in.next();
-				if (c1.equals(position1 )){
-					c1 = "x";
-				}
-				else if (c2.equals(position1 )){
-					c2 = "x";
-				}
-				
-				System.out.println("__"+c1+"____|___"+c2+"__|____c3__");
-				System.out.println("__b1____|___b2__|____b3__");
-				System.out.println("__a1____|___a2__|____a3__");
-				//change player 1 to player 2 and X to 0 and copy these into your french and spanish blocks
-				// in the appropriate language
-				System.out.println("Player 1, where would you like to place your X?");
-				String position2 = in.next();
+
+	
+		int winnerNumber = 0;
+		int turns = 0; //for tie game
+		
+		System.out.println("English Mode");
+		
+		while(winnerNumber == 0){
+			System.out.println("__"+c1+"____|___"+c2+"__|____"+c3+"__");
+			System.out.println("__"+b1+"____|___"+b2+"__|____"+b3+"__");
+			System.out.println("__"+a1+"____|___"+a2+"__|____"+a3+"__");
+			System.out.println("Player 1, where would you like to place your X?");
+			String position1 = in.next();
+			if (c1.equals(position1 )){
+				c1 = "x";
+			}
+			else if (c2.equals(position1 )){
+				c2 = "x";
+			}
+			else if(c3.equals(position1 )){
+				c3 = "x";
+			}
+			else if(a1.equals(position1 )){
+				a1 = "x";
+			}
+			else if(a2.equals(position1 )){
+				a2 = "x";
+			}
+			else if(a3.equals(position1 )){
+				a3 = "x";
+			}
+			else if (b1.equals(position1 )){
+				b1 = "x";
+			}
+			else if (b2.equals(position1 )){
+				b2 = "x";
+			}
+			else if (b3.equals(position1 )){
+				b3 = "x";
+			}
+			
+			if(c2 == "x" && b2 == "x" && a2 == "x"){
+				//player 1 won
+				winnerNumber = 1;
+			}
+			else if(c1 == "x" && b1 == "x" && a1 == "x"){
+				//player 1 won
+				winnerNumber = 1;
+			}
+			else if(c1 == "x" && c2 == "x" && c3 == "x"){
+				//player 1 won
+				winnerNumber = 1;
+			}
+			else if(a1 == "x" && a2 == "x" && a3 == "x"){
+				//player 1 won
+				winnerNumber = 1;
+			}
+			else if(b1 == "x" && b2 == "x" && b3 == "x"){
+				//player 1 won
+				winnerNumber = 1;
+			}
+			else if(c1 == "x" && b2 == "x" && a3 == "x"){
+				//player 1 won
+				winnerNumber = 1;
+			}
+			else if(c3 == "x" && b2 == "x" && a1 == "x"){
+				//player 1 won
+				winnerNumber = 1;
+			}
+			else if(c3 == "x" && b3 == "x" && a3 == "x"){
+				//player 1 won
+				winnerNumber = 1;
+			}
+	
+			if (winnerNumber ==1){
+				break;
+			}
+			turns ++;
+			if (winnerNumber == 0 && turns == 9){
+				break;
+			}
+			System.out.println("__"+c1+"____|___"+c2+"__|____"+c3+"__");
+			System.out.println("__"+b1+"____|___"+b2+"__|____"+b3+"__");
+			System.out.println("__"+a1+"____|___"+a2+"__|____"+a3+"__");
+	
+			System.out.println("Player 2, where would you like to place your o?");
+			String position2 = in.next();
+			if (c1.equals(position2 )){
+				c1 = "o";
+			}
+			else if (c2.equals(position2 )){
+				c2 = "o";
+			}
+			else if(c3.equals(position2 )){
+				c3 = "o";
+			}
+			else if(a1.equals(position2 )){
+				a1 = "o";
+			}
+			else if(a2.equals(position2 )){
+				a2 = "o";
+			}
+			else if(a3.equals(position2 )){
+				a3 = "o";
+			}
+			else if (b1.equals(position2 )){
+				b1 = "o";
+			}
+			else if (b2.equals(position2 )){
+				b2 = "o";
+			}
+			else if (b3.equals(position2 )){
+				b3 = "o";
+			}
+			System.out.println("-----------------------");
+			System.out.println();
+			System.out.println("__"+c1+"____|___"+c2+"__|____"+c3+"__");
+			System.out.println("__"+b1+"____|___"+b2+"__|____"+b3+"__");
+			System.out.println("__"+a1+"____|___"+a2+"__|____"+a3+"__");
+			
+			if(c2 == "o" && b2 == "o" && a2 == "o"){
+				//player 2 won
+				winnerNumber = 2; 
+			}
+			else if(c1 == "o" && b1 == "o" && a1 == "o"){
+				//player 2 won
+				winnerNumber = 2; 
+			}
+			else if(c1 == "o" && c2 == "o" && c3 == "o"){
+				//player 2 won
+				winnerNumber = 2; 
+			}
+			else if(a1 == "o" && a2 == "o" && a3 == "o"){
+				//player 2 won
+				winnerNumber = 2; 
+			}
+			else if(b1 == "o" && b2 == "o" && b3 == "o"){
+				//player 2 won
+				winnerNumber = 2; 
+			}
+			else if(c1 == "o" && b2 == "o" && a3 == "o"){
+				//player 2 won
+				winnerNumber = 2; 
+			}
+			else if(c3 == "o" && b2 == "o" && a1 == "o"){
+				//player 2 won
+				winnerNumber = 2; 
+			}
+			else if(c3 == "o" && b3 == "o" && a3 == "o"){
+				//player 2 won
+				winnerNumber = 2; 
+			}
+			turns ++;
+			if (winnerNumber == 0 && turns == 9){
+				break;
+			}
+		}
+		if (winnerNumber == 0){
+			System.out.println("Tie game!");
+		}
+		System.out.println("Player number " + winnerNumber + " won!");
 				return;
 				
 
@@ -66,7 +205,7 @@ public class TTT {
 		System.out.println("__c1____|___c2__|____c3__");
 		System.out.println("__b1____|___b2__|____b3__");
 		System.out.println("__a1____|___a2__|____a3__");
-		//change this board so it looks like the board in the english version
+		
 		System.out.println("Joueur 1, ou veux tu placer ton X?");
 		String position1 = in.next(); 
 
@@ -76,10 +215,10 @@ public class TTT {
 		System.out.println("__c1____|___c2__|____c3__");
 		System.out.println("__b1____|___b2__|____b3__");
 		System.out.println("__a1____|___a2__|____a3__");
-		//change this board so it looks like the board in the english version
 
 		System.out.println("Jugador 1, donde quieres poner tu X?");
 		String position1 = in.next(); 
 	}
 
 }
+
