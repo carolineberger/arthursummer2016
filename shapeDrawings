@@ -1,0 +1,44 @@
+PShape square;  // The PShape object
+PShape circle;
+PShape ellipse;
+PShape triangle;
+int numFrames = 8; 
+int currentFrame = 0;
+PShape[] bucketShapes = new PShape[numFrames]; //defining an array
+
+
+
+void setup(){
+  size(600, 600);
+  square = createShape(RECT, 0, 0, 50, 50);
+  square.setFill(color(0, 0, 255));
+  
+  circle = createShape(ELLIPSE, 0, 0, 50, 50);
+  circle.setFill(color(0, 0, 255));
+  
+  ellipse = createShape(ELLIPSE, 0, 0, 50, 25);
+  ellipse.setFill(color(100, 201, 90));
+  
+  triangle = createShape(TRIANGLE, 0, 0, 50, 25, 12, 34);
+  triangle.setFill(color(100, 201, 90));
+  background(color(232,157,59));
+  
+  
+  //put shapes inside of buckets
+  for(int b=0; b <= 255; b=b+4){
+   bucketShapes[b+0]=square; 
+  }
+  
+
+}
+void draw(){
+   currentFrame = (currentFrame+1) % numFrames;
+  for( int x =0; x<600; x=x+80){
+    for( int y = 0; y<600; y= y+80){
+      shape(square, 0+y, 0+x);
+      shape(circle, 0+y, 0+x);
+      shape(ellipse, 0+y, 0+x);
+      shape(triangle, 0+y, 0+x);
+    }  
+  }
+}
