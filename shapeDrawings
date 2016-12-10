@@ -5,15 +5,12 @@ PShape triangle;
 
 float xPosition = 0;
 float yPosition;
-float numShapes= 1; //4, 
+float numShapes= 1; 
 
 
 void setup(){
   size(600, 600);
-  //smooth();
-  //noStroke();
   yPosition= 0;
-  
   
   square = createShape(RECT, 0, 0, 50, 50);
   square.setFill(color(0, 0, 255));
@@ -27,77 +24,347 @@ void setup(){
   triangle = createShape(TRIANGLE, 0, 0, 50, 25, 12, 34);
   triangle.setFill(color(100, 201, 90));
   background(color(232,157,59));
-  
-
 }  
 void draw(){
 
 background(color(232,157,59));
   delay(900);
-    if(numShapes >= 1 ){
-         shape(square,0 ,0);
-       shape(circle, 0, 0);
-      shape(ellipse, 0, 0);
-      shape(triangle, 0, 0);
+  if(numShapes >= 1 ){
+    shape(square,0 ,0);
+    shape(circle, 0, 0);
+    shape(ellipse, 0, 0);
+    shape(triangle, 0, 0);    
+  }
+  if(numShapes >= 2 ){
+    shape(square,75 ,0);
+    shape(circle, 75, 0);
+    shape(ellipse, 75, 0);
+    shape(triangle, 75, 0);
+      
+    shape(square,0 ,75);
+    shape(circle, 0, 75);
+    shape(ellipse, 0, 75);
+    shape(triangle, 0, 75);
+      
+    shape(square,75 ,75);
+    shape(circle, 75,75);
+    shape(ellipse, 75,75);
+    shape(triangle, 75, 75); 
+  }
+  if(numShapes >= 3){
+    shape(square,150 ,0);
+    shape(circle, 150, 0);
+    shape(ellipse, 150, 0);
+    shape(triangle, 150, 0);
+      
+    shape(square,150 ,75);
+    shape(circle, 150, 75);
+    shape(ellipse, 150, 75);
+    shape(triangle, 150, 75);
+      
+    shape(square, 150,150);
+    shape(circle, 150,150);
+    shape(ellipse, 150,150);
+    shape(triangle, 150,150 );
+      
+    shape(square, 75,150);
+    shape(circle, 75,150);
+    shape(ellipse, 75,150);
+    shape(triangle, 75,150 );
+      
+    shape(square, 0,150);
+    shape(circle, 0,150);
+    shape(ellipse, 0,150);
+    shape(triangle, 0,150 );
+  }
         
-      
-    }
-    if(numShapes >= 2 ){
-       shape(square,75 ,0);
-       shape(circle, 75, 0);
-      shape(ellipse, 75, 0);
-      shape(triangle, 75, 0);
-      
-       shape(square,0 ,75);
-       shape(circle, 0, 75);
-      shape(ellipse, 0, 75);
-      shape(triangle, 0, 75);
-      
-       shape(square,75 ,75);
-       shape(circle, 75,75);
-      shape(ellipse, 75,75);
-      shape(triangle, 75, 75);
-      
-    }
-    if(numShapes >= 3){
-      shape(square,150 ,0);
-       shape(circle, 150, 0);
-      shape(ellipse, 150, 0);
-      shape(triangle, 150, 0);
-      
-       shape(square,150 ,75);
-       shape(circle, 150, 75);
-      shape(ellipse, 150, 75);
-      shape(triangle, 150, 75);
-      
-       shape(square, 150,150);
-       shape(circle, 150,150);
-      shape(ellipse, 150,150);
-      shape(triangle, 150,150 );
-      
-      shape(square, 75,150);
-       shape(circle, 75,150);
-      shape(ellipse, 75,150);
-      shape(triangle, 75,150 );
-      
-            shape(square, 0,150);
-       shape(circle, 0,150);
-      shape(ellipse, 0,150);
-      shape(triangle, 0,150 );
-      
-    }
+  if(numShapes >= 4){
+    shape(square,0,225);
+    shape(circle,0,225); 
+    shape(ellipse,0,225); 
+    shape(triangle,0,225);
+  
+    shape(square,75,225);
+    shape(circle,75,225); 
+    shape(ellipse,75,225); 
+    shape(triangle,75,225);
     
+    shape(square,150,225);             
+    shape(circle,150,225); 
+    shape(ellipse,150,225); 
+    shape(triangle,150,225);         
     
-    //if(numShapes == 2){
-   
-   // }
+    shape(square,225,225);             
+    shape(circle,225,225); 
+    shape(ellipse,225,225); 
+    shape(triangle,225,225);      
     
-// shape(square, 0+yPosition, 0+xPosition);
-  // shape(circle, 0+yPosition, 0+xPosition);
- // shape(ellipse, 0+yPosition, 0+xPosition);
- // shape(triangle, 0+yPosition, 0+xPosition);
- // xPosition = xPosition + 2;
- //yPosition = yPosition + 2; 
- 
+    shape(square,225,150);             
+    shape(circle,225,150); 
+    shape(ellipse,225,150); 
+    shape(triangle,225,150);      
+
+    shape(square,225,75);             
+    shape(circle,225,75); 
+    shape(ellipse,225,75); 
+    shape(triangle,225,75);
+       
+    shape(square,225,0);             
+    shape(circle,225,0); 
+    shape(ellipse,225,0); 
+    shape(triangle,225,0);  
+  }
+     
+  if(numShapes >= 5){
+    float y=300;
+    shape(square,0, y);
+    shape(circle,0,y); 
+    shape(ellipse,0,y); 
+    shape(triangle,0,y);
+  
+    shape(square,75,y);
+    shape(circle,75,y); 
+    shape(ellipse,75,y); 
+    shape(triangle,75,y);
+    
+    shape(square,150,y);             
+    shape(circle,150,y); 
+    shape(ellipse,150,y); 
+    shape(triangle,150,y);         
+    
+    shape(square,225,y);             
+    shape(circle,225,y); 
+    shape(ellipse,225,y); 
+    shape(triangle,225,y);      
+    
+    shape(square,y,y);             
+    shape(circle,y,y); 
+    shape(ellipse,y,y); 
+    shape(triangle,y,y);
+       
+    shape(square,y,225);             
+    shape(circle,y,225); 
+    shape(ellipse,y,225); 
+    shape(triangle,y,225);
+    
+    shape(square,y,150);             
+    shape(circle,y,150); 
+    shape(ellipse,y,150); 
+    shape(triangle,y,150);      
+
+    shape(square,y,75);             
+    shape(circle,y,75); 
+    shape(ellipse,y,75); 
+    shape(triangle,y,75);
+       
+    shape(square,y,0);             
+    shape(circle,y,0); 
+    shape(ellipse,y,0); 
+    shape(triangle,y,0);  
+  } 
+        
+  if(numShapes >= 6){
+    float y=375;
+    shape(square,0, y);
+    shape(circle,0,y); 
+    shape(ellipse,0,y); 
+    shape(triangle,0,y);
+  
+    shape(square,75,y);
+    shape(circle,75,y); 
+    shape(ellipse,75,y); 
+    shape(triangle,75,y);
+    
+    shape(square,150,y);             
+    shape(circle,150,y); 
+    shape(ellipse,150,y); 
+    shape(triangle,150,y);         
+    
+    shape(square,225,y);             
+    shape(circle,225,y); 
+    shape(ellipse,225,y); 
+    shape(triangle,225,y);      
+    
+    shape(square,300,y);             
+    shape(circle,300,y); 
+    shape(ellipse,300,y); 
+    shape(triangle,300,y);  
+    
+    shape(square,y,y);             
+    shape(circle,y,y); 
+    shape(ellipse,y,y); 
+    shape(triangle,y,y);
+          
+    shape(square,y,300);             
+    shape(circle,y,300); 
+    shape(ellipse,y,300); 
+    shape(triangle,y,300);
+          
+    shape(square,y,225);             
+    shape(circle,y,225); 
+    shape(ellipse,y,225); 
+    shape(triangle,y,225);
+    
+    shape(square,y,150);             
+    shape(circle,y,150); 
+    shape(ellipse,y,150); 
+    shape(triangle,y,150);      
+
+    shape(square,y,75);             
+    shape(circle,y,75); 
+    shape(ellipse,y,75); 
+    shape(triangle,y,75);
+       
+    shape(square,y,0);             
+    shape(circle,y,0); 
+    shape(ellipse,y,0); 
+    shape(triangle,y,0);  
+   } 
+      
+   if(numShapes >= 7){
+    float y=450;
+    shape(square,0, y);
+    shape(circle,0,y); 
+    shape(ellipse,0,y); 
+    shape(triangle,0,y);
+  
+    shape(square,75,y);
+    shape(circle,75,y); 
+    shape(ellipse,75,y); 
+    shape(triangle,75,y);
+    
+    shape(square,150,y);             
+    shape(circle,150,y); 
+    shape(ellipse,150,y); 
+    shape(triangle,150,y);         
+    
+    shape(square,225,y);             
+    shape(circle,225,y); 
+    shape(ellipse,225,y); 
+    shape(triangle,225,y);      
+    
+    shape(square,300,y);             
+    shape(circle,300,y); 
+    shape(ellipse,300,y); 
+    shape(triangle,300,y);  
+    
+    shape(square,375,y);             
+    shape(circle,375,y); 
+    shape(ellipse,375,y); 
+    shape(triangle,375,y);  
+    
+    shape(square,y,y);             
+    shape(circle,y,y); 
+    shape(ellipse,y,y); 
+    shape(triangle,y,y);
+          
+    shape(square,y,375);             
+    shape(circle,y,375); 
+    shape(ellipse,y,375); 
+    shape(triangle,y,375);
+          
+    shape(square,y,300);             
+    shape(circle,y,300); 
+    shape(ellipse,y,300); 
+    shape(triangle,y,300);
+       
+    shape(square,y,225);             
+    shape(circle,y,225); 
+    shape(ellipse,y,225); 
+    shape(triangle,y,225);
+    
+    shape(square,y,150);             
+    shape(circle,y,150); 
+    shape(ellipse,y,150); 
+    shape(triangle,y,150);      
+
+    shape(square,y,75);             
+    shape(circle,y,75); 
+    shape(ellipse,y,75); 
+    shape(triangle,y,75);
+       
+    shape(square,y,0);             
+    shape(circle,y,0); 
+    shape(ellipse,y,0); 
+    shape(triangle,y,0);  
+   } 
+   if(numShapes >= 8){
+    float y=525;
+        shape(square,0, y);
+    shape(circle,0,y); 
+    shape(ellipse,0,y); 
+    shape(triangle,0,y);
+  
+    shape(square,75,y);
+    shape(circle,75,y); 
+    shape(ellipse,75,y); 
+    shape(triangle,75,y);
+    
+    shape(square,150,y);             
+    shape(circle,150,y); 
+    shape(ellipse,150,y); 
+    shape(triangle,150,y);         
+    
+    shape(square,225,y);             
+    shape(circle,225,y); 
+    shape(ellipse,225,y); 
+    shape(triangle,225,y);      
+    
+    shape(square,300,y);             
+    shape(circle,300,y); 
+    shape(ellipse,300,y); 
+    shape(triangle,300,y);  
+    
+    shape(square,375,y);             
+    shape(circle,375,y); 
+    shape(ellipse,375,y); 
+    shape(triangle,375,y);  
+     
+    shape(square,450,y);             
+    shape(circle,450,y); 
+    shape(ellipse,450,y); 
+    shape(triangle,450,y);
+    
+    shape(square,y,y);             
+    shape(circle,y,y); 
+    shape(ellipse,y,y); 
+    shape(triangle,y,y);
+    
+    shape(square,y,450);             
+    shape(circle,y,450); 
+    shape(ellipse,y,450); 
+    shape(triangle,y,450);
+          
+    shape(square,y,375);             
+    shape(circle,y,375); 
+    shape(ellipse,y,375); 
+    shape(triangle,y,375);
+          
+    shape(square,y,300);             
+    shape(circle,y,300); 
+    shape(ellipse,y,300); 
+    shape(triangle,y,300);
+       
+    shape(square,y,225);             
+    shape(circle,y,225); 
+    shape(ellipse,y,225); 
+    shape(triangle,y,225);
+    
+    shape(square,y,150);             
+    shape(circle,y,150); 
+    shape(ellipse,y,150); 
+    shape(triangle,y,150);      
+
+    shape(square,y,75);             
+    shape(circle,y,75); 
+    shape(ellipse,y,75); 
+    shape(triangle,y,75);
+       
+    shape(square,y,0);             
+    shape(circle,y,0); 
+    shape(ellipse,y,0); 
+    shape(triangle,y,0);  
+   }
+     
  numShapes = numShapes + 1;
 }
