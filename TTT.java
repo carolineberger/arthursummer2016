@@ -19,21 +19,21 @@ public class TTT {
 		System.out.println("3. spanish");
 		int languagePreference = in.nextInt();
 		if( languagePreference == 1){
-			english(1);
+			english();
 		}
 		else if ( languagePreference == 2){
-			french(2);
+			french();
 			
 		}
 		else if(languagePreference == 3){
-			spanish(3);
+			spanish();
 			
 		}
 
 
 	}
 	
-	public static void english(int languagePreference){
+	public static void english(){
 
 	
 		int winnerNumber = 0;
@@ -195,7 +195,7 @@ public class TTT {
 				
 
 	}
-	public static void french(int languagePreference){
+	public static void french(){
 		
 		
 		int winnerNumber = 0;
@@ -357,7 +357,7 @@ public class TTT {
 				
 
 	}
-	public static void spanish(int languagePreference){
+	public static void spanish(){
 
 
 		
