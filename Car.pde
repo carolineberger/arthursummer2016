@@ -1,4 +1,4 @@
-
+// create velocity
 class Car{
   color c;
   int number_of_wheels;
