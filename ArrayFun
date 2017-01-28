@@ -1,0 +1,17 @@
+
+
+int ulycode = 3;
+int paulcode = 2;
+int carolinecode = 0;
+int arthurcode = 1;
+
+
+int [] ages = {20,7,5,2};
+String [] names = {"Caroline","Arthur","Paul","uly"};
+
+//System.out.println( names[carolinecode] + " is " + ages[carolinecode]);
+
+//System.out.println( names[arthurcode] + " is " + ages[arthurcode]);
+
+System.out.println("NAMES: \n1. "+ names[arthurcode] +"\n2. " + names[paulcode] +"\n3. "+ names[carolinecode]
++"\n4. "+ names[ulycode]);                             
