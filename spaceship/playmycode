@@ -1,0 +1,115 @@
+/* 
+ * This is example code to help you get started
+ * writing a new project.
+ *
+ * Edit this file and then click the run icon above.
+ * Visit playmycode.com/docs if you need some help.
+ * Don't forget to save your work!
+ */
+
+/*
+images
+*/
+// IMAGES : rocketship, asteroid, background image, start image, end image
+backgroundImage = new Image( "background.jpg" )
+ArthurspaceshipImage = new Image("arthurspaceship.png")
+/* 
+game objects
+*/
+// OBJECTS : rocketship (1), asteroids (6) = 7 objects
+background = new Background( backgroundImage )
+spaceship = new Spaceship( ArthurspaceshipImage )
+/*
+main loop
+*/
+onEachFrame() do
+    background.draw()
+    spaceship.setDirection()
+    spaceship.move()
+    spaceship.checkBounds()
+    spaceship.draw()
+
+end
+
+/* 
+classes
+*/
+// CLASSES : Rocketship, Asteroid = 2 classes
+class Background
+    def new( image )
+        @image = image
+    end
+
+    def draw()
+        drawImage( @image, 0, 0 )
+    end
+end
+
+class Spaceship
+    def new( image )
+        @image = image
+
+        @positionX = getScreenWidth() / 2 - ( getWidth() / 2 )
+        @positionY = getScreenHeight() / 2 - ( getHeight() / 2 ) 
+
+        @direction = "none"
+        @speed = 1
+        @score = 0
+        @isAlive = true
+    end
+
+    def draw()
+        if( @isAlive )   //Only draw him if he's alive
+            drawImage( @image, @positionX, @positionY )
+        end
+    end
+
+    def getWidth()
+        return @image.getWidth()
+    end
+
+    def getHeight()
+        return @image.getHeight()
+    end
+    def setDirection()
+        controls = getControls()
+        /*
+        Get keyboard input, if correct key is pressed set
+        the corresponding direction
+        */
+        if controls.isKeyPressed( :up )
+            @direction = "north"
+        else if controls.isKeyPressed( :right )
+            @direction = "east"
+        else if controls.isKeyPressed( :down )
+            @direction = "south"
+        else if controls.isKeyPressed( :left )
+            @direction = "west"
+        end
+    end
+    def move()   //This updates his co-ordinates to make him move
+        if( @isAlive )   //Only move if he's alive
+            if( @direction == "north" )
+                @positionY = @positionY - @speed
+            else if( @direction == "east" )
+                @positionX = @positionX + @speed
+            else if( @direction == "south" )
+                @positionY = @positionY + @speed
+            else if( @direction == "west" )
+                @positionX = @positionX - @speed
+            end
+        end
+    end
+    def checkBounds()   //This stops the player from going offscreen
+        if( @positionX <= 0 )
+            @positionX = 0
+        else if( @positionX >= getScreenWidth() - getWidth() )
+            @positionX = getScreenWidth() - getWidth()
+        end
+        if( @positionY <= -60 )
+            @positionY = -60
+        else if( @positionY >= getScreenHeight() - getHeight() + 63 )
+            @positionY = getScreenHeight() - getHeight() + 63
+        end
+    end
+end
