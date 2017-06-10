@@ -1,29 +1,51 @@
-/* 
- * This is example code to help you get started
- * writing a new project.
- *
- * Edit this file and then click the run icon above.
- * Visit playmycode.com/docs if you need some help.
- * Don't forget to save your work!
- */
-
-/*
-images
-*/
 // IMAGES : rocketship, asteroid, background image, start image, end image
 backgroundImage = new Image( "background.jpg" )
 ArthurspaceshipImage = new Image("arthurspaceship.png")
+asteroidImage = new Image("asteroid.png")
 /* 
 game objects
 */
-// OBJECTS : rocketship (1), asteroids (6) = 7 objects
+// OBJECTS : rocketship (1) + asteroids (6) = 7 objects
 background = new Background( backgroundImage )
 spaceship = new Spaceship( ArthurspaceshipImage )
+asteroid1 = new Asteroid(asteroidImage, 185.5, 0.4)
+asteroid2 = new Asteroid(asteroidImage, 112.5, 0.7)
+asteroid3 = new Asteroid(asteroidImage, 37.5, 1)
+asteroid4 = new Asteroid(asteroidImage, -37.5, 1.2)
+asteroid5 = new Asteroid(asteroidImage, -112.5, 0.8)
+asteroid6 = new Asteroid(asteroidImage, -185.5, 0.5)
+
 /*
 main loop
 */
 onEachFrame() do
     background.draw()
+    
+    asteroid1.checkBounds()
+    asteroid1.draw()
+    asteroid1.move()
+    
+    asteroid2.checkBounds()
+    asteroid2.draw()
+    asteroid2.move()
+    
+    asteroid3.checkBounds()
+    asteroid3.draw()
+    asteroid3.move()
+    
+    asteroid4.checkBounds()
+    asteroid4.draw()
+    asteroid4.move()
+    
+    asteroid5.checkBounds()
+    asteroid5.draw()
+    asteroid5.move()
+    
+    asteroid6.checkBounds()
+    asteroid6.move()
+    asteroid6.draw()
+    
+    
     spaceship.setDirection()
     spaceship.move()
     spaceship.checkBounds()
@@ -112,4 +134,37 @@ class Spaceship
             @positionY = getScreenHeight() - getHeight() + 63
         end
     end
+end
+
+class Asteroid
+    def new( image, spacing, speed )
+        @image = image
+    
+        @positionX = getScreenWidth() / 2 - ( getWidth() / 2 ) - 300
+        //@positionY = positionY
+        @positionY = getScreenHeight() / 2 - ( getHeight() / 2 ) + spacing
+
+        @speed = speed
+    end
+    def draw()
+        drawImage( @image, @positionX, @positionY )
+        
+    end
+    def getWidth()
+        return @image.getWidth()
+    end
+
+    def getHeight()
+        return @image.getHeight()
+    end
+    
+    def move()   //This updates his co-ordinates to make him move
+        @positionX = @positionX + @speed
+    end
+    def checkBounds()  
+        if( @positionX >= getScreenWidth() - getWidth() + 200)
+            @positionX = getScreenWidth() - getWidth() - 400
+        end
+    end
+    
 end
